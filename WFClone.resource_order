@@ -2,5 +2,8 @@
   "FolderOrderSettings":[
     {"name":"Fishing","order":1,"path":"folders/Objects/Fishing.yy",},
   ],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"sAim","order":2,"path":"sprites/sAim/sAim.yy",},
+    {"name":"sVara","order":1,"path":"sprites/sVara/sVara.yy",},
+  ],
 }

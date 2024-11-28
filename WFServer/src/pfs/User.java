@@ -26,6 +26,9 @@ public class User implements Runnable {
     public int hspd = 0;
     public int vspd = 0;
     public boolean alive = true;
+    public int FishDistance = 0;
+    public boolean Fishing = false;
+
 
     public User(Server server, SocketChannel channel) {
         this.channel = channel;
@@ -97,6 +100,11 @@ public class User implements Runnable {
                                 //senddata.put("id", playerid);
                                 username = json.getString("username");
                                 name = json.getString("name");
+                                break;
+                            case "FishDistance":
+                                Fishing = true;
+                                FishDistance = json.getInt("fishdistance");
+                                lobby.updatePlayers();
                                 break;
                             default:
                                 break;

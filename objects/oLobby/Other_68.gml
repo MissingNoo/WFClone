@@ -18,12 +18,18 @@ switch (r[$ "type"]) {
 		    if (players[i][$ "username"] == global.username) { continue; }
 			var exists = false;
 			var name = players[i][$ "username"];
+			var pinfo = players[i];
 			with (oSlave) {
 				if (!array_contains(remove, username)) {
 					instance_destroy();
 				}
 			    if (username == name) {
 				    exists = true;
+					fishing = pinfo[$ "Fishing"] ?? false;
+					fishdistancegoal = pinfo[$ "FishDistance"] ?? 5;
+					if (fishdistance != fishdistancegoal) {
+					    fishdistance = 0;
+					}
 				}
 			}
 			if (!exists) {

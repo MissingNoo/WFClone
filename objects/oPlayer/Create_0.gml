@@ -14,6 +14,10 @@ state.add("Idle", {
 		if (leftright != 0 or updown != 0) {
 		    state.change("Walk");
 		}
+		var fishaction = input_check("action");
+		if (fishaction) {
+		    state.change("Fishing");
+		}
 	},
 	draw : function() {
 	},
@@ -67,5 +71,29 @@ state.add("Walk", {
 		}
 	},
 	draw : function() {
+	},
+});
+state.add("Fishing", {
+	enter : function() {
+		fishdistance = 10;
+		sendrod = true;
+	},
+	step : function() {
+		var cancel = input_check("cancel");
+		if (cancel) {
+		    state.change("Idle");
+		}
+		if (input_check("action")) {
+		    fishdistance = clamp(fishdistance + 1, 5, 100);
+		}
+		else if(sendrod) {
+			sendrod = false;
+			sendMessageNew("FishDistance", {fishdistance});
+		}
+	},
+	draw : function() {
+		draw_sprite_ext(sVara, 0, x, y, image_xscale, image_yscale, 0, c_white, 1);
+		draw_line(x + lengthdir_x(sprite_get_width(sVara) * image_xscale, 0) - (53 * image_xscale), y + lengthdir_y(sprite_get_height(sVara) * image_yscale, 90), x + fishdistance, y);
+		draw_sprite_ext(sAim, 0, x + (fishdistance), y, 1, 1, 0, c_white, 1);
 	},
 });

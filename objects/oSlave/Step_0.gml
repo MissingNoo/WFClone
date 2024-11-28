@@ -37,3 +37,4 @@ if (vspd == 0 and hspd == 0 or x < -100) {
 	    y = yy;
 	}
 }
+fishdistance = lerp(fishdistance, fishdistancegoal, 0.2);

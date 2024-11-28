@@ -53,6 +53,8 @@ public class Lobby {
             for (int i = 0; i < players.size(); i++) {
                 JSONObject current_player = new JSONObject();
                 current_player.put("username", players.get(i).name);
+                current_player.put("Fishing", players.get(i).Fishing);
+                current_player.put("FishDistance", players.get(i).FishDistance);
                 //current_player.put("username", players.get(i).username);
                 //current_player.put("id", players.get(i).playerid);
                 current_player.put("color", players.get(i).color);

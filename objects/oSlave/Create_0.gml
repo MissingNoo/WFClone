@@ -6,3 +6,6 @@ hspd = 0;
 vspd = 0;
 xx = -999;
 yy = 0;
+fishing = false;
+fishdistance = 0;
+fishdistancegoal = 0;
