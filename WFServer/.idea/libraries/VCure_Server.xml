@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="VCure-Server">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/VCure_Server_jar/VCure-Server.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
