@@ -1,0 +1,1 @@
+if state.event_exists("gui") state.gui();
